@@ -4,6 +4,12 @@
   padding: 0;
   margin: 0;
 }
+:root {
+  --main-color: #19c8fa;
+  --transparent-color: rgb(15 116 143 / 70%);
+  --paragraph-color: #777;
+  --section-padding: 100px;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -13,11 +19,70 @@ body {
 ul {
   list-style: none;
 }
+
 .contaniner {
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+}
+.spacial-header {
+  padding: 100px;
+  text-align: center;
+}
+.spacial-header h2 {
+  position: relative;
+  font-weight: normal;
+  font-size: 40px;
+  margin-bottom: 80px;
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  .spacial-header h2 {
+    position: relative;
+    font-weight: normal;
+    font-size: 20px;
+    margin-bottom: 80px;
+    text-transform: uppercase;
+  }
+  .spacial-header p {
+    font-size: 15px;
+  }
+}
+.spacial-header h2::before {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background-color: black;
+  width: 140px;
+}
+.spacial-header h2::after {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+  bottom: -36px;
+  background: white;
+  left: 50%;
+  transform: translate(-50%, 10%);
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.spacial-header p {
+  width: 550px;
+  margin: 0 auto 100px;
+  color: var(--paragraph-color);
+  line-height: 2;
+  max-width: 100%;
 }
 @media (min-width: 768px) {
   .contaniner {
@@ -34,12 +99,7 @@ ul {
     width: 1170px;
   }
 }
-:root {
-  --main-color: #19c8fa;
-  --transparent-color: rgb(15 116 143 / 70%);
-}
 /* End global rules */
-
 header {
   margin-top: 10px;
   left: 0;
@@ -184,14 +244,14 @@ header .contaniner nav .icon i::after {
   flex-direction: column;
   justify-content: flex-end;
 }
-@media (max-width:767px) {
-    .landing .text {
-        width: 100%;
-        justify-content: center;
-    }
-    .landing .text .contant {
-        width: 100%;
-    }
+@media (max-width: 767px) {
+  .landing .text {
+    width: 100%;
+    justify-content: center;
+  }
+  .landing .text .contant {
+    width: 100%;
+  }
 }
 .landing .text .contant h2 {
   margin-bottom: 20px;
@@ -214,38 +274,234 @@ header .contaniner nav .icon i::after {
   -o-transform: translateY(-50%);
   color: #ddd;
 }
-@media (max-width:767px) {
-    .landing .change-background {
-        display: none;
-    }
+@media (max-width: 767px) {
+  .landing .change-background {
+    display: none;
+  }
 }
 
 .landing .fa-angle-left {
-    left: 30px;
+  left: 30px;
 }
 .landing .fa-angle-right {
-    right: 30px;
+  right: 30px;
 }
-.landing .switchpage{
-    transform: translateX(-50%);
-    left: 50%;
-    position: absolute;
-    bottom: 30px;
-    display: flex;
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
+.landing .switchpage {
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
-.landing .switchpage span{
-    height: 20px;
-    width: 20px;
-    border: 1px solid white;
-    border-radius: 50%;
-    margin-left: 9px;
+.landing .switchpage span {
+  height: 20px;
+  width: 20px;
+  border: 1px solid white;
+  border-radius: 50%;
+  margin-left: 9px;
 }
-.landing .switchpage .active{
-    background-color: var(--main-color);
-    border-color: white;
+.landing .switchpage .active {
+  background-color: var(--main-color);
+  border-color: white;
 }
 /* End landing */
+/* start Services */
+.Services {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+@media (min-width: 767px) {
+  .Services .Services-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    grid-column-gap: 40px;
+    grid-row-gap: 70px;
+  }
+}
+
+.Services .Services-content .col {
+  display: flex;
+}
+
+.Services .Services-content .col i {
+  margin-right: 50px;
+}
+@media (max-width: 767px) {
+  .Services .Services-content .col {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .Services .Services-content .col i {
+    margin: 0 0 40px;
+  }
+  .Services .spacial-header {
+    padding: 0;
+  }
+}
+.Services .Services-content .col .text h3 {
+  margin-bottom: 30px;
+  color: var(--main-color);
+}
+.Services .Services-content .col .text p {
+  color: var(--paragraph-color);
+  line-height: 2;
+}
+
+/* snd Services */
+/*  start desgin  */
+.desgin {
+  padding-bottom: var(--section-padding);
+  padding-top: var(--section-padding);
+  min-height: 600px;
+  background-image: url(../images/design-features.jpg);
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.desgin::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgb(0 0 0 / 60%);
+}
+.desgin .text,
+.desgin .imge {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+.desgin .imge {
+  text-align: center;
+}
+.desgin .imge img {
+  position: relative;
+  bottom: -150px;
+}
+@media (max-width: 767px) {
+  .desgin .imge img {
+    display: none;
+  }
+}
+.desgin .text {
+  color: white;
+  padding: 50px;
+  background-color: var(--transparent-color);
+}
+@media (max-width: 767px) {
+  .desgin .text {
+    flex: none;
+    width: 100%;
+  }
+}
+.desgin .text h2 {
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.desgin .text ul li {
+  font-weight: normal;
+  /* text-transform: uppercase; */
+  margin-bottom: 40px;
+  padding: 0 30px;
+}
+.desgin .text ul li::before {
+  position: absolute;
+  content: "\f108";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-left: -28px;
+}
+/*  End desgin  */
+/* Start portfile */
+.Portfolio {
+  padding-top: var(--section-padding);
+  padding-bottom: var(--section-padding);
+}
+.Portfolio .shuffle {
+  display: flex;
+  justify-content: center;
+}
+.Portfolio .shuffle li {
+  padding: 10px;
+  margin-bottom: 35px;
+}
+.Portfolio .shuffle .active {
+  color: white;
+  background-color: var(--main-color);
+}
+.Portfolio .Portfolio-img {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 992px) {
+  .Portfolio .Portfolio-img {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 767px) {
+  .Portfolio .Portfolio-img {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+.Portfolio .Portfolio-img .photo-box {
+  position: relative;
+  overflow: hidden;
+}
+.Portfolio .Portfolio-img .photo-box .caption {
+  position: absolute;
+  bottom: -100%;
+  z-index: 2;
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+  color: black;
+  transition: 0.3s;
+}
+.Portfolio .Portfolio-img .photo-box:hover .caption {
+  bottom: 0;
+}
+.Portfolio .Portfolio-img .photo-box:hover .caption h3 {
+  color: var(--main-color);
+}
+.Portfolio .Portfolio-img .photo-box:hover img {
+  transform: rotate(3deg) scale(1.1);
+  -webkit-transform: rotate(3deg) scale(1.1);
+  -moz-transform: rotate(3deg) scale(1.1);
+  -ms-transform: rotate(3deg) scale(1.1);
+  -o-transform: rotate(3deg) scale(1.1);
+}
+
+.Portfolio .Portfolio-img .photo-box img {
+  max-width: 100%;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.Portfolio .more {
+  display: inline-block;
+  margin-left: 50%;
+  color: white;
+  background-color: var(--main-color);
+  margin-top: 50px;
+  text-decoration: none;
+  padding: 15px;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+}
+/* End portfile */
